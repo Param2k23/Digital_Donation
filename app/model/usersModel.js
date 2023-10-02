@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-    firstname:{
+    firstName:{
         type: String,
         required: true
     },
-    lastname:{
+    lastName:{
         type: String,
         required: true
     },
@@ -33,7 +33,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    pincode:{
+    pinCode:{
         type: String,
         required: true
     },
