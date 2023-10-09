@@ -1,0 +1,95 @@
+<div class="row">
+    <div class="col-md-4"></div>
+
+    <div class="col-md-8"> 
+        <form [formGroup]="myForm"  (ngSubmit)="saveUser()">
+            First Name:  
+            <input   type="text" formControlName="firstName">
+            <span class="error" *ngIf="!myForm.get('firstName')?.valid && myForm.get('firstName')?.touched">Please Enter FirstName</span> 
+
+          <br><br>
+          Last Name:  
+          <input   type="text" formControlName="lastName">
+          <span class="error" *ngIf="!myForm.get('lastName')?.valid && myForm.get('lastName')?.touched">Please Enter FirstName</span> 
+
+        <br><br>
+
+            Email:
+            <input type="text" formControlName="email">
+            
+            <span class="error" *ngIf="myForm.get('email')?.touched && !myForm.get('email')?.valid">
+
+                <span *ngIf="myForm.get('email')?.hasError('required')">
+                    Please Enter Email 
+                </span>
+                <span *ngIf="myForm.get('email')?.hasError('emailInvalid')">
+                    Please Enter Valid Email 
+                </span>
+            </span>
+            
+            <br><br>
+            Password: 
+            <input type="password" formControlName="password"/>
+            <span class="error" *ngIf="myForm.get('password')?.touched && !myForm.get('password')?.valid">
+
+              <span *ngIf="myForm.get('password')?.hasError('required')">
+                  Please Enter Password 
+              </span>
+              <span *ngIf="myForm.get('password')?.hasError('minlength')">
+                  Please Enter Atleast 8 Characters
+              </span>
+          </span>
+            <br><br>
+            Contact Number:  
+            <input   type="number" formControlName="contactNo">
+            <span class="error" *ngIf="!myForm.get('contactNo')?.valid && myForm.get('contactNo')?.touched">Contact Number</span>
+          <br><br>
+
+            Address:  
+            <input   type="text" formControlName="address">
+            <span class="error" *ngIf="!myForm.get('address')?.valid && myForm.get('address')?.touched">Please Enter Address</span> 
+
+          <br><br>
+
+          
+          State:  
+          <input   type="text" formControlName="state">
+          <span class="error" *ngIf="!myForm.get('state')?.valid && myForm.get('state')?.touched">Please Enter State</span> 
+          
+          <br><br>
+          
+          City:  
+          <input   type="text" formControlName="city">
+          <span class="error" *ngIf="!myForm.get('city')?.valid && myForm.get('city')?.touched">Please Enter City</span> 
+
+        <br><br>
+
+        Pin code:  
+            <input   type="number" formControlName="pinCode">
+            <span class="error" *ngIf="!myForm.get('pinCode')?.valid && myForm.get('pinCode')?.touched">Please Enter Pin Code</span> 
+
+          <br><br>
+
+        Profile URL:  
+          <input   type="string" formControlName="profileUrl">
+          <span class="error" *ngIf="!myForm.get('profileUrl')?.valid && myForm.get('profileUrl')?.touched">Please Enter Pin Code</span> 
+
+        <br><br>
+          Role:  
+          <input   type="text" formControlName="role">
+          <span class="error" *ngIf="!myForm.get('role')?.valid && myForm.get('role')?.touched">Please Enter Role</span> 
+
+        <br><br>
+
+          <input type="submit" value="Signup"/>
+
+          <br><br>
+          Already User ?? 
+          <br>
+          <a routerLink="/login">Login</a>
+          </form>
+    </div>
+
+   
+
+</div>
