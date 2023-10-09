@@ -3,6 +3,7 @@ require("./app/config/dbConfig").getDbConnection()
 
 const publicRoutes = require("./app/routes/publicRoutes")
 const authMiddlerware = require("./app/middleware/auth.middleware")
+const categoryRoutes = require("./app/routes/categoryRoutes")
 const app = express()
 
 app.use(function (req, res, next) {
@@ -14,6 +15,8 @@ app.use(function (req, res, next) {
     });
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
+
+app.use("/admin",categoryRoutes)
 
 app.use("/public",publicRoutes)
 app.listen(9990)
