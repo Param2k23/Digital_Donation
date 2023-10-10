@@ -27,5 +27,9 @@ export class EditCategoryComponent {
     }
   })
   }
-
+updateCategory()
+{
+  console.log(this.categoryId)
+  console.log(this.categoryName)
+}
 }

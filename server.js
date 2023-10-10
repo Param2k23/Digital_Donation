@@ -6,6 +6,11 @@ const authMiddlerware = require("./app/middleware/auth.middleware")
 const categoryRoutes = require("./app/routes/categoryRoutes")
 const app = express()
 
+
+app.options('*', (req, res) => {
+    res.header('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT,DELETE');
+    res.status(200).send();
+});
 app.use(function (req, res, next) {
     //Enabling CORS
     res.header("Access-Control-Allow-Origin", "*");
