@@ -1,0 +1,19 @@
+<div class="container"> 
+    <div class="row" *ngIf="userId.length != 0">
+        <div class="col-md-4"></div>
+
+        <div class="col-md-4">
+            <div class="form-group"> 
+             Category Name: <input type="text" [(ngModel)]="categoryName" class="form-control" />  
+            </div>
+            <button class="btn btn-primary" (click)="updateCategory()">Update Category</button>
+            <br><br>    
+        </div>
+
+        <div class="col-md-4"></div>
+
+    </div>
+
+</div>
+ 
+ 

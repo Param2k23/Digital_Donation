@@ -41,6 +41,16 @@ module.exports.updateCategory = function(req,res){
     categoryModel.updateOne({_id:categoryId},{"categoryName":categoryName}).then((data)=>{
         res.json({"msg":"product updated","data":data,"rcode":200})
     }).catch((err)=>{
-        res.json({"msg":"product updation fails","data":data,"rcode":200})      
+        res.json({"msg":"product updation fails","data":err,"rcode":-9})      
+    })
+}
+
+module.exports.getCategoryById = function(req,res)
+{
+    let categoryId = req.params.categoryId
+    categoryModel.findById({ _id: categoryId }).then((data)=>{
+        res.json({"msg":"Category retreived","data":data,"rcode":200})
+    }).catch((err)=>{
+        res.json({"msg":"SMW","data":err,"rcode":-9})
     })
 }

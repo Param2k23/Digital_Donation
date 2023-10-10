@@ -16,4 +16,9 @@ export class CategoryService {
   {
     return this.httpClient.delete("https://donation-api-5bc4.onrender.com/admin/category/"+categoryId)
   }
+
+  getAllCategory()
+  {
+    return this.httpClient.get("https://donation-api-5bc4.onrender.com/admin/listcategory")
+  }
 }

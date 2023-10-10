@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { AddCategoryComponent } from './add-category/add-category.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { EditCategoryComponent } from './edit-category/edit-category.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { AddCategoryComponent } from './add-category/add-category.component';
     LoginComponent,
     HomeAdminComponent,
     AddCategoryComponent,
+    CategoriesComponent,
+    EditCategoryComponent,
   ],
   imports: [
     BrowserModule,
